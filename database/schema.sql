@@ -1,0 +1,2 @@
+-- Football Sports Academy Management System
+-- MySQL schema (7 tables)

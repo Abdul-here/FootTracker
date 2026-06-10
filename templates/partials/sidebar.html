@@ -1,0 +1,35 @@
+<aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav">
+        <a href="{{ url_for('page_dashboard') }}" class="nav-item{% if active_page == 'dashboard' %} active{% endif %}">
+            <span class="material-icons-round">dashboard</span>
+            <span>Dashboard</span>
+        </a>
+        <a href="{{ url_for('page_players') }}" class="nav-item{% if active_page == 'players' %} active{% endif %}">
+            <span class="material-icons-round">groups</span>
+            <span>Players</span>
+        </a>
+        <a href="{{ url_for('page_coaches') }}" class="nav-item{% if active_page == 'coaches' %} active{% endif %}">
+            <span class="material-icons-round">sports</span>
+            <span>Coaches</span>
+        </a>
+        <a href="{{ url_for('page_teams') }}" class="nav-item{% if active_page == 'teams' %} active{% endif %}">
+            <span class="material-icons-round">shield</span>
+            <span>Teams</span>
+        </a>
+        <a href="{{ url_for('page_training') }}" class="nav-item{% if active_page == 'training' %} active{% endif %}">
+            <span class="material-icons-round">fitness_center</span>
+            <span>Training</span>
+        </a>
+        <a href="{{ url_for('page_matches') }}" class="nav-item{% if active_page == 'matches' %} active{% endif %}">
+            <span class="material-icons-round">emoji_events</span>
+            <span>Matches</span>
+        </a>
+        <a href="{{ url_for('page_payments') }}" class="nav-item{% if active_page == 'payments' %} active{% endif %}">
+            <span class="material-icons-round">account_balance_wallet</span>
+            <span>Payments</span>
+        </a>
+    </nav>
+    <div class="sidebar-footer">
+        <span class="material-icons-round">sports_soccer</span>
+    </div>
+</aside>

@@ -1,0 +1,11 @@
+# Football Sports Academy Management System — Python Dependencies
+# Install: pip install -r requirements.txt
+
+# Web framework
+Flask==3.0.3
+
+# MySQL database driver
+mysql-connector-python==9.0.0
+
+# Environment variable management
+python-dotenv==1.0.1

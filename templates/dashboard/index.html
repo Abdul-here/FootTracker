@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}FootTracker | Dashboard{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/dashboard.css') }}">
+{% endblock %}
+{% block content %}
+<div class="page-header">
+    <div class="page-header-text">
+        <h1>Dashboard</h1>
+        <p>Academy overview and key metrics at a glance</p>
+    </div>
+</div>
+
+<div class="stats-grid" id="stats-grid">
+    <div class="loading-spinner">
+        <div class="spinner"></div><span>Loading stats...</span>
+    </div>
+</div>
+
+<div class="dashboard-grid">
+    <div class="card">
+        <div class="card-header">
+            <h2>Quick Actions</h2>
+        </div>
+        <div class="quick-actions">
+            <a href="{{ url_for('page_players') }}" class="quick-action">
+                <span class="material-icons-round">person_add</span>
+                <span>Add Player</span>
+            </a>
+            <a href="{{ url_for('page_matches') }}" class="quick-action">
+                <span class="material-icons-round">event</span>
+                <span>Schedule Match</span>
+            </a>
+            <a href="{{ url_for('page_training') }}" class="quick-action">
+                <span class="material-icons-round">fitness_center</span>
+                <span>Plan Training</span>
+            </a>
+            <a href="{{ url_for('page_payments') }}" class="quick-action">
+                <span class="material-icons-round">receipt_long</span>
+                <span>View Payments</span>
+            </a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/pages/dashboard.js') }}"></script>
+{% endblock %}

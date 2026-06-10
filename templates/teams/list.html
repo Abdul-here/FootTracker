@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}FootTracker | Teams{% endblock %}
+{% block content %}
+<div class="page-header">
+    <div class="page-header-text">
+        <h1>Teams</h1>
+        <p>Organize squads by age group and assign coaches</p>
+    </div>
+    <button type="button" class="btn btn-primary" id="btn-add">
+        <span class="material-icons-round">add</span> Add Team
+    </button>
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="table-wrapper" id="table-container"></div>
+    </div>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/pages/teams.js') }}"></script>
+{% endblock %}

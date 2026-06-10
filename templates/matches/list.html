@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}FootTracker | Matches{% endblock %}
+{% block content %}
+<div class="page-header">
+    <div class="page-header-text">
+        <h1>Matches</h1>
+        <p>Fixtures, results, and match scheduling</p>
+    </div>
+    <button type="button" class="btn btn-primary" id="btn-add">
+        <span class="material-icons-round">add</span> Add Match
+    </button>
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="table-wrapper" id="table-container"></div>
+    </div>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/pages/matches.js') }}"></script>
+{% endblock %}

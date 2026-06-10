@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}FootTracker | Payments{% endblock %}
+{% block content %}
+<div class="page-header">
+    <div class="page-header-text">
+        <h1>Payments</h1>
+        <p>Track fees, payment status, and overdue accounts</p>
+    </div>
+    <button type="button" class="btn btn-primary" id="btn-add">
+        <span class="material-icons-round">add</span> Add Payment
+    </button>
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="table-wrapper" id="table-container"></div>
+    </div>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/pages/payments.js') }}"></script>
+{% endblock %}

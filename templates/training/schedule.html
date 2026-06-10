@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}FootTracker | Training{% endblock %}
+{% block content %}
+<div class="page-header">
+    <div class="page-header-text">
+        <h1>Training Sessions</h1>
+        <p>Schedule and manage team training sessions</p>
+    </div>
+    <button type="button" class="btn btn-primary" id="btn-add">
+        <span class="material-icons-round">add</span> Schedule Session
+    </button>
+</div>
+<div class="card">
+    <div class="card-body" id="schedule-container"></div>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/pages/training.js') }}"></script>
+{% endblock %}
