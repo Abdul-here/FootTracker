@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 </div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon red"><span class="material-icons-round">warning</span></div>
+                <div class="stat-icon red"><span class="material-icons-round">money_off</span></div>
                 <div class="stat-info">
                     <span class="stat-label">Unpaid Fees</span>
                     <span class="stat-value">${data.unpaid_payments_count}</span>

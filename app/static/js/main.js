@@ -298,8 +298,10 @@ function initGlobalSearch() {
             players.forEach(p => {
                 html += `<a class="search-item" href="/players">
                     <span class="material-icons-round">person</span>
-                    <span class="search-item-label">${Toast.escapeHtml(p.first_name + ' ' + p.last_name)}</span>
-                    <span class="search-item-sub">${Toast.escapeHtml(p.position || '')}${p.team_name ? ' · ' + Toast.escapeHtml(p.team_name) : ''}</span>
+                    <span class="search-item-text">
+                        <span class="search-item-label">${Toast.escapeHtml(p.first_name + ' ' + p.last_name)}</span>
+                        <span class="search-item-sub">${Toast.escapeHtml(p.position || '')}${p.team_name ? ' · ' + Toast.escapeHtml(p.team_name) : ''}</span>
+                    </span>
                 </a>`;
             });
         }
@@ -310,8 +312,10 @@ function initGlobalSearch() {
             coaches.forEach(c => {
                 html += `<a class="search-item" href="/coaches">
                     <span class="material-icons-round">sports</span>
-                    <span class="search-item-label">${Toast.escapeHtml(c.first_name + ' ' + c.last_name)}</span>
-                    <span class="search-item-sub">${Toast.escapeHtml(c.specialization || '')}</span>
+                    <span class="search-item-text">
+                        <span class="search-item-label">${Toast.escapeHtml(c.first_name + ' ' + c.last_name)}</span>
+                        <span class="search-item-sub">${Toast.escapeHtml(c.specialization || '')}</span>
+                    </span>
                 </a>`;
             });
         }
@@ -322,8 +326,10 @@ function initGlobalSearch() {
             matches.forEach(m => {
                 html += `<a class="search-item" href="/matches">
                     <span class="material-icons-round">emoji_events</span>
-                    <span class="search-item-label">${Toast.escapeHtml(m.team_name || '?')} vs ${Toast.escapeHtml(m.opponent_name)}</span>
-                    <span class="search-item-sub">${Toast.escapeHtml(m.status || '')}${m.match_date ? ' · ' + formatDate(m.match_date) : ''}</span>
+                    <span class="search-item-text">
+                        <span class="search-item-label">${Toast.escapeHtml(m.team_name || '?')} vs ${Toast.escapeHtml(m.opponent_name)}</span>
+                        <span class="search-item-sub">${Toast.escapeHtml(m.status || '')}${m.match_date ? ' · ' + formatDate(m.match_date) : ''}</span>
+                    </span>
                 </a>`;
             });
         }
@@ -334,8 +340,10 @@ function initGlobalSearch() {
             payments.forEach(p => {
                 html += `<a class="search-item" href="/payments">
                     <span class="material-icons-round">payments</span>
-                    <span class="search-item-label">${Toast.escapeHtml(p.player_name || '—')}</span>
-                    <span class="search-item-sub">PKR ${Number(p.amount).toFixed(2)} · ${Toast.escapeHtml((p.payment_type || '').replace(/_/g, ' '))} · ${Toast.escapeHtml(p.status || '')}</span>
+                    <span class="search-item-text">
+                        <span class="search-item-label">${Toast.escapeHtml(p.player_name || '—')}</span>
+                        <span class="search-item-sub">PKR ${Number(p.amount).toFixed(2)} · ${Toast.escapeHtml((p.payment_type || '').replace(/_/g, ' '))} · ${Toast.escapeHtml(p.status || '')}</span>
+                    </span>
                 </a>`;
             });
         }
