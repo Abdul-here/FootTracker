@@ -875,6 +875,16 @@ def create_payment():
     status = data.get("status", "pending")
     paid_date = data.get("paid_date")
     notes = data.get("notes")
+
+    if paid_date:
+        from datetime import date
+        try:
+            pd = date.fromisoformat(paid_date)
+            if pd > date.today():
+                return api_error("Paid date cannot be a future date.")
+        except ValueError:
+            return api_error("Invalid paid_date format.")
+
     try:
         payment_id = execute_write(
             """
@@ -902,6 +912,15 @@ def update_payment(payment_id: int):
     updates = {k: data[k] for k in PAYMENT_FIELDS if k in data}
     if not updates:
         return api_error("No valid fields to update")
+
+    if "paid_date" in updates and updates["paid_date"]:
+        from datetime import date
+        try:
+            pd = date.fromisoformat(updates["paid_date"])
+            if pd > date.today():
+                return api_error("Paid date cannot be a future date.")
+        except ValueError:
+            return api_error("Invalid paid_date format.")
 
     set_clause = ", ".join(f"{col} = %s" for col in updates)
     params = tuple(updates.values()) + (payment_id,)

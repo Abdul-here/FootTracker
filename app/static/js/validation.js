@@ -58,6 +58,9 @@ const Validator = {
             if (field === 'due_date' && d < new Date(today.getTime() - 365 * 24 * 60 * 60 * 1000)) {
                 return 'Due date is too far in the past.';
             }
+            if (field === 'paid_date' && value > `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`) {
+                return 'Paid date cannot be a future date.';
+            }
             return '';
         },
 
@@ -167,10 +170,13 @@ const Validator = {
         }
 
         const paidDate = form.querySelector('[name="paid_date"]');
-        const dueDate = form.querySelector('[name="due_date"]');
-        if (paidDate && dueDate && paidDate.value && dueDate.value && paidDate.value < dueDate.value) {
-            this.setFieldError(paidDate, 'Paid date cannot be before due date.');
-            valid = false;
+        if (paidDate && paidDate.value) {
+            const today = new Date();
+            const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+            if (paidDate.value > todayStr) {
+                this.setFieldError(paidDate, 'Paid date cannot be a future date.');
+                valid = false;
+            }
         }
 
         return valid;
